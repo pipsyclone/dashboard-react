@@ -1,4 +1,4 @@
 Dashboard with React
 
-Type: Customizations
+Type: Customizations <br />
 Status: Not Perfect

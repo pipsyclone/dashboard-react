@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import DashboardIndex from "./pages/dashboard/dashboardIndex"
+import Home from "./pages/dashboard/dashboard-page/home"
+
+const App = () => {
+
+    const Dashboard = (page) => {
+        return (
+            <DashboardIndex page={page} />
+        )
+    }
+
+    return (
+        <Routes>
+            <Route path='/' element={Dashboard(<Home />)} />
+            <Route path='*' element={'Error 404, Page Not Found!'} />
+        </Routes>
+    )
 }
 
-export default App;
+export default App
